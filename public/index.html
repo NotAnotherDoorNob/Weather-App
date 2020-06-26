@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js" integrity="sha256-a6uP+lfJTznPH4/eUqQFX3/sULwjHbfGtUjy8CWPooI=" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Carter+One&display=swap" rel="stylesheet"> 
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Node</title>
+    </head>
+    <body>
+
+
+
+        <main>
+            <div class="container">
+                <div id="item1">
+                    
+                        <span id="city"></span><br/>
+                        <span id="temp"></span>°<span id="unit"></span><br/>
+                    
+                </div>
+
+                <div id="item2">
+                    <p>
+                        Current Weather: <span id="weatherCode"></span><br/>
+                        
+                    </p>
+                </div>
+                <div id="item3">
+                    <p>
+                        EPA Air Quality Rating: <span id="EPAcode"></span><br/>
+                        Particulate Matter &lt; 2.5 μm: <span id="partMatter"></span><br/>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <button id="checkIn">Check in</button>
+                <a href="logs/all.html">Logs</a>
+            </div>
+        </main>
+
+
+
+        <script src="sketch.js"></script>
+    </body>
+</html>

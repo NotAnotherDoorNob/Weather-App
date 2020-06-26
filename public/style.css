@@ -1,0 +1,163 @@
+:root {
+    --border-radius: 2px;
+    --box-shadow: 2px 2px 10px;
+    --color-shadow: #00000013;
+    --main-blue:  rgb(91, 196, 245);
+    --width-content: 1200px;
+    --width-card: 285px;
+}
+
+
+
+
+/*html**********************************************/
+html {
+    background-image: linear-gradient(to bottom right, rgb(98, 211, 255), rgb(77, 245, 208));
+    font-family: 'Asap', sans-serif;
+    font-size: 100%;
+    color: var(--main-blue);
+}
+
+html, body {
+    min-height: 100%;
+  }
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    padding: 1rem 0;
+}
+
+
+
+
+
+
+/*hero**********************************************/
+footer,
+header,
+main {
+    margin: 0 auto;
+    max-width: var(--width-content);
+    padding: 1rem 1rem;
+}
+
+.hero-text{
+    color: white;
+    font-family: 'Asap', sans-serif;
+    font-weight:700;
+    font-size: 5rem;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+
+
+
+
+
+/*dashboard**********************************************/
+
+
+/* section {
+    display: flex;
+    flex-wrap: wrap;
+  
+    justify-content: center;
+}
+
+section aside {
+    background-color: white;
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    margin: 1rem;
+    padding: 1.25rem;
+    width: var(--width-card);
+    border-radius: var(--border-radius);
+} */
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr;
+}
+
+
+
+.container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    margin: 20px;
+  }
+
+#item1, #item2, #item3 {
+    grid-row-start: 2;
+}
+
+#item1 {
+    background-color:  rgba(255, 255, 255, 0);
+    text-align: left;
+    color: white;
+}
+
+#city {
+    font-size: 4em;
+    font-weight: 400;
+    padding: 0;
+}
+
+#temp {
+    font-size: 6em;
+    font-weight: 700;
+    padding: 20px 0;
+
+}
+
+p {
+    padding: 10px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+button {
+    background-color: var(--main-blue);
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; 
+
+}
+
+#checkinMap {
+    height: 400px;
+    width: 800px;
+    margin: 8px 0px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        
+     }
+
+     #item1, #item2, #item3 {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}

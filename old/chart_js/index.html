@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+        <title>Fetch and Graph CSV</title>
+    </head>
+    <body>
+
+        <canvas id="chart" width="1000" height="400"></canvas>
+
+        <script>
+
+            function cToF(celsius) {
+                let fahr = celsius * 9 / 5 + 32;
+                return fahr
+            }
+            
+
+            makeChart();
+            
+            async function makeChart() {
+            
+                let data = await getData();
+                const ctx = document.getElementById('chart').getContext('2d');
+                
+                const myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: data.xAxis,
+                        datasets: [{
+                            label: 'Combined Land-Surface Air and Sea-Surface Water Temperature Anomalies',
+                            data: data.yAxis,
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1,
+                            fill: false,
+                            
+                        }]
+                    },
+                    options: {
+                        responsive: false,
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            callback: function(value, index, values) {
+                                                return `${value} °F`
+                                            }
+                                        }
+                                    }]
+                                }
+                            }
+                });
+             }
+
+
+        // Data from: https://data.giss.nasa.gov/gistemp/
+
+        
+        async function getData(){
+            const xAxis = [];
+            const yAxis = [];
+            const response = await fetch('temps.csv');
+            const data = await response.text();
+
+            const table = data.split('\n').slice(1);
+            table.forEach(row => {
+                const cols = row.split(',');
+                const year = cols[0];
+                xAxis.push(year);
+                const temp = cols[1];
+                yAxis.push(cToF(parseFloat(temp) + 14));
+                console.log(year, temp);
+            });
+            return { xAxis, yAxis };
+        }
+
+        </script>
+    </body>
+</html>

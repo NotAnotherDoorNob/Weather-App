@@ -1,0 +1,10 @@
+html {
+    background-color: rgb(44, 44, 44);
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+}
+p {
+    padding: 10px;
+    background-color: rgb(49, 49, 49);
+    border-radius: 10px;
+}
