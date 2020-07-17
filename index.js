@@ -43,7 +43,7 @@ app.get('/weather/:latlng', async (request, response) => {
 
 
     const weather_api_key = process.env.CLIMACELL_API_KEY;
-    const weather_url = `https://api.climacell.co/v3/weather/realtime?lat=${lat}&lon=${lng}&unit_system=us&fields%5B%5D=epa_health_concern&fields%5B%5D=temp&fields%5B%5D=weather_code&fields%5B%5D=pm25&apikey=${weather_api_key}`
+    const weather_url = `https://api.climacell.co/v3/weather/realtime?lat=${lat}&lon=${lng}&unit_system=us&fields=pollen_tree%2Cpollen_weed%2Cpollen_grass%2Ctemp%2Cweather_code%2Cfeels_like%2Chumidity%2Cwind_speed%2Cpm25%2Ccloud_cover%2Cepa_health_concern&apikey=${weather_api_key}`
     const weather_response = await fetch(weather_url);
     const weather_data = await weather_response.json();
 

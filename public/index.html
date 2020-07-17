@@ -11,36 +11,68 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <title>Node</title>
     </head>
+
+
+
+
     <body>
 
-
+        <header>
+            <nav>
+                <a href="index.html"><img src="Images/logo.svg" height="70"></a>
+    
+            </nav>
+        </header>
 
         <main>
             <div class="container">
                 <div id="item1">
                     
                         <span id="city"></span><br/>
-                        <span id="temp"></span>°<span id="unit"></span><br/>
-                    
-                </div>
+                        <span id="temp"></span><span id="unit"></span><br/>
+                        <p id="feels_like"></p>
 
+                </div>
+                <div id="sub-item1">
+                    <div id="pollen2">
+                        <h2>Pollen Ratings</h2>
+                        <p>Weed Pollen: <span id="pollenWeed"></span></p>
+                        <p>Grass Pollen: <span id="pollenGrass"></span></p>
+                        <p>Tree Pollen: <span id="pollenTree"></span></p>
+                    </div>
+                    <div id="pollen1"><img src="" height="80"></div>
+
+                </div>
                 <div id="item2">
                     <p>
-                        Current Weather: <span id="weatherCode"></span><br/>
-                        
+                        Current Weather: <br/><span id="weatherCode"></span><br/>
                     </p>
+                        <a id="weatherImage"></a>
+
+                    <p class="lowerText">
+                        Cloud Coverage: <span id="cloudCoverage"></span></br>
+                        Wind Speed: <span id="windSpeed"></span></br>
+                        Humidity: <span id="humidity"></span>
+                    </p>
+                    
                 </div>
                 <div id="item3">
                     <p>
-                        EPA Air Quality Rating: <span id="EPAcode"></span><br/>
-                        Particulate Matter &lt; 2.5 μm: <span id="partMatter"></span><br/>
+                        Air Particulate Matter  </br>&lt; 2.5 μm/m3: <span id="partMatter"></span>
+                    </p>
+
+                    <div id="sketch-holder">
+                        <!-- Sketch will go here! -->
+                    </div>
+                    <p class="lowerText">
+                        EPA Air Quality Rating: </br> <span id="EPAcode"></span>
                     </p>
                 </div>
             </div>
-            <div>
+             <div id="buttons">
                 <button id="checkIn">Check in</button>
                 <a href="logs/all.html">Logs</a>
-            </div>
+            </div> 
         </main>
 
 
