@@ -263,7 +263,20 @@
                     }
                     
                             
-                            
+                    const submitButton = document.getElementById('checkIn');
+                    submitButton.addEventListener('click', async event => {
+                        const data = { lat, lng, temp, unit, weatherCode, city };
+                            const options = {
+                                method:'POST', 
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                    },
+                                body: JSON.stringify(data)
+                            };
+                            const db_response = await fetch('/api', options)
+                            const db_json = await db_response.json();
+                            console.log(db_json);
+                    });       
                             
                 } else {
                     console.log('geolocation IS NOT available');
@@ -281,19 +294,6 @@
 
 
 
-                const submitButton = document.getElementById('checkIn');
-                submitButton.addEventListener('click', async event => {
-                    const data = { lat, lng, temp, unit, weatherCode };
-                        const options = {
-                            method:'POST', 
-                            headers: {
-                                'Content-Type': 'application/json'
-                                },
-                            body: JSON.stringify(data)
-                        };
-                        const response = await fetch('/api', options)
-                        const json = await response.json();
-                        console.log(json);
-                });
+
 
 

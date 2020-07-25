@@ -22,14 +22,23 @@
     </head>
     <body>  
         <header>
-            <h1 class="hero-text">The Weather Here</h1>
+            <nav>
+                <a href="index.html"><img src="Images/logo.svg" height="70"></a>
+    
+            </nav>
         </header>
         <main>
-            <section>
+            <div id="map">
                 <div id="checkinMap"></div>
-            </section>
+                <div>
+                    <form id="logsFormX">
+                        <button  type="submit" formaction="/index.html" id="logsButton">Home ➜</button>
+                    </form>
+                </div>
+            </div>
+
+           
             <script src='logs.js'></script>
-            <p><a href="../index.html">Check In</a> | <a href="all.html">Logs</a></p>
         </main>
 
     </body>

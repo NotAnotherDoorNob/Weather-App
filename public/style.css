@@ -79,7 +79,7 @@ nav a {
 /*dashboard**********************************************/
 
 
-/* section {
+ section {
     display: flex;
     flex-wrap: wrap;
   
@@ -93,7 +93,7 @@ section aside {
     padding: 1.25rem;
     width: var(--width-card);
     border-radius: var(--border-radius);
-} */
+} 
 
 
 .container {
@@ -140,6 +140,7 @@ section aside {
     align-items: center;
     vertical-align: bottom;
     position: relative;
+    box-shadow:2px 2px 10px #3b3b3b28 ;
 }
 
 h2{
@@ -237,7 +238,21 @@ a:visited {
     padding: 0 15px;
 }
 
+
+#map {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#logsForm {
+    display: inline;
+}
+
 button {
+    font-family: inherit;
+    font-weight: 500;
     background-color: var(--main-blue);
     border: none;
     color: white;
@@ -248,13 +263,20 @@ button {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer; 
-
+    border-radius: 5px;
 }
 
 #checkinMap {
     height: 400px;
-    width: 800px;
-    margin: 8px 0px;
+    width: 60%;
+    margin: 5px 0px;
+    grid-row-end: 2;
+    background-color:  rgba(255, 255, 255, 0);
+    text-align: left;
+    color: white;
+    margin: 20px;
+    padding-bottom: 0;
+    display: block;
 }
 
 @media screen and (max-width: 950px) {
@@ -271,5 +293,9 @@ button {
      #item1, #item2, #item3 {
         grid-column: auto;
         grid-row: auto;
+    }
+
+    #checkinMap {
+        width: 80%;
     }
 }
