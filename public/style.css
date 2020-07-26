@@ -44,7 +44,6 @@ main {
 
 header {
     top: 0;
-
     max-width: 100%;
 }
 
@@ -279,6 +278,27 @@ button {
     display: block;
 }
 
+.footer {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 2rem 1rem;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.082);
+    color: white;
+    padding: 0;
+    margin: 0;
+    height: 5rem;
+    font-size: .75em;
+    text-align: center;
+  }
+
+
+  
+  .footer p {
+    padding-top: 5px;
+  }
+
 @media screen and (max-width: 950px) {
     main {
         max-width: 700px;
@@ -297,5 +317,15 @@ button {
 
     #checkinMap {
         width: 80%;
+    }
+
+    .footer {
+        position: block;
+    }
+
+}
+@media screen and (min-width: 950px) {
+    .footer {
+        position: fixed;
     }
 }
